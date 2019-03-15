@@ -1,0 +1,32 @@
+{
+"questions":
+[
+  {
+    "content": "Question 1",
+    "type": "radio",
+    "options": [
+      "Kiyoshige",
+      "Garces",
+      "Aparicio"
+    ]
+  },
+  {
+    "content": "Question 2",
+    "type": "radio",
+    "options": [
+      "Kiyoshige",
+      "Garces",
+      "Aparicio"
+    ]
+  },
+  {
+    "content": "Question 3",
+    "type": "textfield",
+    "options": [
+      "Kiyoshige",
+      "Garces",
+      "Aparicio"
+    ]
+  }
+]
+}
