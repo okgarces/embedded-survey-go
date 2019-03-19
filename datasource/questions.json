@@ -1,32 +1,34 @@
 {
-"questions":
-[
-  {
-    "content": "Question 1",
-    "type": "radio",
-    "options": [
-      "Kiyoshige",
-      "Garces",
-      "Aparicio"
-    ]
+  "drive": {
+    "url": ""
   },
-  {
-    "content": "Question 2",
-    "type": "radio",
-    "options": [
-      "Kiyoshige",
-      "Garces",
-      "Aparicio"
-    ]
-  },
-  {
-    "content": "Question 3",
-    "type": "textfield",
-    "options": [
-      "Kiyoshige",
-      "Garces",
-      "Aparicio"
-    ]
-  }
-]
+  "questions": [
+    {
+      "content": "Question 1",
+      "type": "radio",
+      "options": [
+        "Vea pues ",
+        "No se diga más",
+        "Por Favor"
+      ]
+    },
+    {
+      "content": "Question 2",
+      "type": "radio",
+      "options": [
+        "Kiyoshige",
+        "Garces",
+        "Aparicio"
+      ]
+    },
+    {
+      "content": "Question 3",
+      "type": "text",
+      "options": [
+        "Kiyoshige",
+        "Garces",
+        "Aparicio"
+      ]
+    }
+  ]
 }
