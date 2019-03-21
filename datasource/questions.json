@@ -1,6 +1,9 @@
 {
-  "drive": {
-    "url": ""
+  "location": {
+    "spreedsheet": {
+      "name": "",
+      "url": ""
+    }
   },
   "questions": [
     {
@@ -28,6 +31,15 @@
         "Kiyoshige",
         "Garces",
         "Aparicio"
+      ]
+    },
+    {
+      "content": "Question 3",
+      "type": "checkbox",
+      "options": [
+        "Why are you doing that",
+        "What",
+        "Where"
       ]
     }
   ]

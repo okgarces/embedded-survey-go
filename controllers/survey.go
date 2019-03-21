@@ -21,12 +21,8 @@ type Question struct {
 /**
 Read Datasource with questions
  */
-func ReadDatasource() Questionnaire {
-	jsonFile, err := os.Open("datasource/questions.json")
-	// if we os.Open returns an error then handle it
-	if err != nil {
-		fmt.Println(err)
-	}
+func ReadDatasource(url string) Questionnaire {
+	jsonFile, err := os.Open(url)
 	// Bytes and Unmarshal Json
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 	var questions Questionnaire

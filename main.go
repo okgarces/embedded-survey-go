@@ -2,18 +2,19 @@ package main
 
 import (
 	"bufio"
-	"embedded-survey-go/controllers"
-	"embedded-survey-go/templates"
+	"embedded-survey-go/survey"
 	"fmt"
 	"os"
 )
 
 func main() {
-	questions := controllers.ReadDatasource()
-	fmt.Println(templates.Render(questions))
+	questionsStr := survey.Render(map[string]interface{}{"datasource": "datasource/questions.json"})
+	fmt.Println(questionsStr)
 	f, _ := os.Create("index.html")
 	defer f.Close()
 	w := bufio.NewWriter(f)
-	w.WriteString(templates.Render(questions))
+	w.WriteString(questionsStr)
 	w.Flush()
 }
+
+
