@@ -1,13 +1,16 @@
 {
-  "location": {
-    "spreedsheet": {
-      "name": "",
+  "settings": {
+    "spreadsheet": {
+      "name": "encuesta_cafe_networking",
       "url": ""
+    },
+    "submit": {
+      "name": "Enviar"
     }
   },
   "questions": [
     {
-      "content": "Question 1",
+      "content": "Qué te gusta más?",
       "type": "radio",
       "options": [
         "Vea pues ",
@@ -16,7 +19,7 @@
       ]
     },
     {
-      "content": "Question 2",
+      "content": "Escoge uno de estos tres",
       "type": "radio",
       "options": [
         "Kiyoshige",
@@ -25,7 +28,7 @@
       ]
     },
     {
-      "content": "Question 3",
+      "content": "Comentarios adicionales",
       "type": "text",
       "options": [
         "Kiyoshige",
@@ -34,7 +37,7 @@
       ]
     },
     {
-      "content": "Question 3",
+      "content": "Selecciona de las siguientes opciones",
       "type": "checkbox",
       "options": [
         "Why are you doing that",
