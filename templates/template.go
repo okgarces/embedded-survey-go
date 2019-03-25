@@ -15,12 +15,13 @@ const (
 
 func Render(questions controllers.Questionnaire) string  {
 	var returnString string
-	returnString = "<form>"
+	returnString = "<form method='POST'>"
 	for i:=0; i < len(questions.Questions); i++{
 		returnTemp := renderByInput(questions.Questions[i])(questions.Questions[i])
 		returnTemp += "</br>"
 		returnString += returnTemp
 	}
+	returnString += fmt.Sprintf("<button type='submit'> %s </button>", controllers.GlobalSettings.Config.Submit.Name )
 	returnString += "</form>"
 	return  returnString
 }
@@ -60,12 +61,13 @@ func renderRadio(question controllers.Question) string {
 }
  func renderCheckBox(question controllers.Question) string{
  	mainStr := "<div> %s </div>"
-	str := "<input type='checkbox' id='%s' value='%s'> <label for='%s'> %s </label>"
+	str := "<input type='checkbox' id='%s' name='%s' value='%s' > <label for='%s'> %s </label>"
 	strReturn := fmt.Sprintf(mainStr, question.Content)
+	name := getName(question.Content)
 	for i:=0; i<len(question.Options); i++ {
 		option := question.Options[i]
 		optionName := getName(option)
-		strReturn += fmt.Sprintf(str, optionName, optionName, optionName, option )
+		strReturn += fmt.Sprintf(str, optionName, name, optionName, optionName, option )
 	}
 
 	 return strReturn
