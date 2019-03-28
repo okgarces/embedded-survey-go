@@ -18,6 +18,7 @@ type SettingsConfig struct {
 type SheetSettings struct {
 	Name string `json:"name"`
 	Url string `json:"url"`
+	Id string `json:"id"`
 }
 
 type SubmitSettings struct {
@@ -37,11 +38,12 @@ type Question struct {
 
 // Define Global Settings
 var GlobalSettings Settings
+var GlobalURIFile string
 /**
 Read Datasource with questions
  */
-func ReadDatasource(url string) Questionnaire {
-	jsonFile, _ := os.Open(url)
+func ReadDatasource() Questionnaire {
+	jsonFile, _ := os.Open(GlobalURIFile)
 	// Bytes and Unmarshal Json
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 	var questions Questionnaire

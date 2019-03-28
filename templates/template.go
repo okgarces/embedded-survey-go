@@ -2,8 +2,8 @@ package templates
 
 import (
 	"embedded-survey-go/controllers"
+	"embedded-survey-go/helpers"
 	"fmt"
-	"strings"
 )
 
 
@@ -40,7 +40,7 @@ func renderByInput(question controllers.Question) func(question2 controllers.Que
 
 func renderText(question controllers.Question) string {
 	str := "%s <br/> <input type='text' name='%s'>"
-	name := getName(question.Content)
+	name := helpers.GetName(question.Content)
 	strReturn := fmt.Sprintf(str, question.Content, name)
 	return strReturn
 }
@@ -48,12 +48,12 @@ func renderText(question controllers.Question) string {
 func renderRadio(question controllers.Question) string {
 	mainStr := "<div> %s </div>"
 	str := "<div> <input type='radio' id='%s' value='%s' name='%s' > <label> %s </label> </div>"
-	name := getName(question.Content)
+	name := helpers.GetName(question.Content)
 
 	strReturn := fmt.Sprintf(mainStr, question.Content)
 	for i:=0; i<len(question.Options); i++ {
 		option := question.Options[i]
-		optionName := getName(option)
+		optionName := helpers.GetName(option)
 		strReturn += fmt.Sprintf(str, optionName, optionName, name, option )
 	}
 
@@ -63,19 +63,12 @@ func renderRadio(question controllers.Question) string {
  	mainStr := "<div> %s </div>"
 	str := "<input type='checkbox' id='%s' name='%s' value='%s' > <label for='%s'> %s </label>"
 	strReturn := fmt.Sprintf(mainStr, question.Content)
-	name := getName(question.Content)
+	name := helpers.GetName(question.Content)
 	for i:=0; i<len(question.Options); i++ {
 		option := question.Options[i]
-		optionName := getName(option)
+		optionName := helpers.GetName(option)
 		strReturn += fmt.Sprintf(str, optionName, name, optionName, optionName, option )
 	}
 
 	 return strReturn
  }
-
-func getName(str string) string {
-
-	name := strings.ReplaceAll(str, " ", "_")
-	name = strings.ToLower(name)
-	return name
-}
