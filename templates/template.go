@@ -61,7 +61,7 @@ func renderRadio(question controllers.Question) string {
 }
  func renderCheckBox(question controllers.Question) string{
  	mainStr := "<div> %s </div>"
-	str := "<input type='checkbox' id='%s' name='%s' value='%s' > <label for='%s'> %s </label>"
+	str := "<div><input type='checkbox' id='%s' name='%s' value='%s' > <label for='%s'> %s </label> </div>"
 	strReturn := fmt.Sprintf(mainStr, question.Content)
 	name := helpers.GetName(question.Content)
 	for i:=0; i<len(question.Options); i++ {
